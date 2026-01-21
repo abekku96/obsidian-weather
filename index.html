@@ -5,15 +5,31 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Sendai Weather</title>
   <style>
-    html, body {
+    html,
+    body {
       margin: 0;
       padding: 0;
+    }
+
+    /* iframeの高さが余った時に「下の余白(黒ベタ)」が見えにくいよう、背景はbody側に寄せる */
+    html {
+      background: transparent;
+    }
+
+    body {
       background-color: #1d1d1f;
     }
+
     /* 2段に落としたいならここを調整 */
     .container {
-      max-width: 520px;
-      margin: 0 auto;
+      width: 100%;
+      max-width: none;
+      margin: 0;
+    }
+
+    .weatherwidget-io {
+      display: block;
+      width: 100%;
     }
   </style>
 </head>
