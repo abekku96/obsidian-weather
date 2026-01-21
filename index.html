@@ -1,73 +1,51 @@
 <!doctype html>
 <html lang="ja">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Sendai Weather</title>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sendai Weather</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      background-color: #1d1d1f;
+    }
+    /* 2段に落としたいならここを調整 */
+    .container {
+      max-width: 520px;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <a
+      class="weatherwidget-io"
+      href="https://forecast7.com/ja/38d27140d87/sendai/"
+      data-label_1="SENDAI"
+      data-label_2="WEATHER"
+      data-days="5"
+      data-theme="original"
+      data-basecolor="#1d1d1f"
+      data-accent="#1d1d1f"
+      data-textcolor="#ffffff"
+      data-highcolor="#ffffff"
+      data-lowcolor="rgba(255,255,255,0.65)"
+    >
+      SENDAI WEATHER
+    </a>
 
-    <style>
-      /* Obsidianのiframe内で背景を透過させる */
-      html,
-      body {
-        margin: 0;
-        padding: 0;
-        background: transparent;
-      }
-
-      /*
-        2段レイアウトはウィジェットが「狭い幅」でレスポンシブに崩れることで出やすい。
-        ここで幅を絞って2段になりやすくする。効かなければ max-width を下げる。
-        目安: 520 -> 480 -> 420
-      */
-      .widget-wrap {
-        max-width: 520px;
-        margin: 0 auto;
-      }
-
-      /*
-        余白が気になる場合は調整
-        例: 上下に少し余白を足すなら padding を追加
-      */
-      .widget-wrap {
-        padding: 0;
-      }
-    </style>
-  </head>
-
-  <body>
-    <div class="widget-wrap">
-      <a
-        class="weatherwidget-io"
-        href="https://forecast7.com/ja/38d27140d87/sendai/"
-        data-label_1="SENDAI"
-        data-label_2="WEATHER"
-        data-days="5"
-        data-mode="Both"
-        data-theme="dark"
-        data-basecolor="rgba(0,0,0,0)"
-        data-accent="rgba(0,0,0,0)"
-        data-textcolor="#ffffff"
-        data-highcolor="#ffffff"
-        data-lowcolor="rgba(255,255,255,0.6)"
-      >
-        SENDAI WEATHER
-      </a>
-
-      <script>
-        /*!
-         * weatherwidget.ioがaタグを置換してウィジェットを描画する
-         * Obsidianのノート本文ではscriptが動かないことがあるため、GitHub Pages側で実行する
-         */
-        !function(d, s, id) {
-          var js, fjs = d.getElementsByTagName(s)[0];
-          if(!d.getElementById(id)) {
-            js = d.createElement(s);
-            js.id = id;
-            js.src = "https://weatherwidget.io/js/widget.min.js";
-            fjs.parentNode.insertBefore(js, fjs);
-          }
-        }(document, "script", "weatherwidget-io-js");
-      </script>
-    </div>
-  </body>
+    <script>
+      !function(d,s,id){
+        var js,fjs=d.getElementsByTagName(s)[0];
+        if(!d.getElementById(id)){
+          js=d.createElement(s);
+          js.id=id;
+          js.src="https://weatherwidget.io/js/widget.min.js";
+          fjs.parentNode.insertBefore(js,fjs);
+        }
+      }(document,"script","weatherwidget-io-js");
+    </script>
+  </div>
+</body>
 </html>
