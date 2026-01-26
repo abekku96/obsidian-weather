@@ -11,13 +11,14 @@
       padding: 0;
     }
 
-    /* iframeの高さが余った時に「下の余白(黒ベタ)」が見えにくいよう、背景はbody側に寄せる */
+    /* iframeの高さが余った時の余白も含めて、ページ全体の背景色を統一する */
     html {
-      background: transparent;
+      background-color: #1c1d20;
     }
 
     body {
       background-color: #1c1d20;
+      min-height: 100vh;
     }
 
     /* 2段に落としたいならここを調整 */
